@@ -37,7 +37,7 @@ trip = Trip(trip_data.get_spark_session(), trip_data.get_spark_dataframe())
 
 
 ##########################################################   CHART 1   ########################################################## 
-#st.subheader('Annual & Monthly spendings')
+st.subheader('Annual & Monthly spendings')
 st.metric("Total Uber Eat Spending", order.get_total_spending() + " €")
 
 col1, col2, col3 = st.columns(3)
