@@ -52,9 +52,9 @@ Step 1/7 : ARG PYTHON_IMAGE
 Step 2/7 : FROM ${PYTHON_IMAGE}
 invalid reference format
 ERROR: Service 'fastapi' failed to build : Build failed
-```  
-
-Replace in Dockerfiles in streamlit and fastapi folders, the line:  
+```
+  
+Replace the following line in Dockerfiles in the streamlit and the fastapi folders:  
 
 ```sh
 FROM ${PYTHON_IMAGE}
