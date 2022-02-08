@@ -7,6 +7,7 @@ Request your UberEats datas in:
 
 You must put these files in this project folder "datas/":
 + eats_order_details.csv
++ eats_restaurant_names.csv
 + trips_data.csv
 
 Run the docker-compose command: 
