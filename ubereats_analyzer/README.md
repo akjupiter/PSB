@@ -21,6 +21,7 @@ This will create the streamlit and fastapi images and start these services in 2 
 Go to the webbrowser in this address: 
 + http://localhost:8501/
 
+<img width="754" alt="Capture d’écran 2022-02-08 à 01 19 45" src="https://user-images.githubusercontent.com/41515992/152894297-f41354f8-3560-47fa-87fd-8d3f458d686e.png">
 
 ### FastAPI
 
