@@ -61,19 +61,19 @@ col2.metric(order.get_month(1)[1] + " (" + order.get_month(1)[0] + ')', order.ge
 col3.metric(order.get_month(2)[1] + " (" + order.get_month(2)[0] + ')', order.get_month_spending(2) + " €", delta)
 
 
-##########################################################   CHART 1   ##########################################################
+##########################################################   CHART 2   ##########################################################
 st.subheader('Average delivery time')
 fig = px.line(trip.get_average_delivery_time().sort_values(by="Distance (miles)"), x="Distance (miles)", y="time", color="Distance (miles)")
 st.plotly_chart(fig)
 
 
-##########################################################   CHART 2   ##########################################################
+##########################################################   CHART 3   ##########################################################
 st.subheader('Orders frequency')
 fig = px.bar(order.get_orders_frequency(), x='date', y='count', color='count', color_continuous_scale=px.colors.sequential.RdBu)
 st.plotly_chart(fig)
 
 
-##########################################################   CHART 3   ##########################################################
+##########################################################   CHART 4   ##########################################################
 st.subheader('Eating hours')
 fig = px.pie(order.get_eating_hours(), values='values', names='labels', color='labels',
              color_discrete_map={'morning: 06-12h':'lightcyan',
@@ -83,14 +83,14 @@ fig = px.pie(order.get_eating_hours(), values='values', names='labels', color='l
 st.plotly_chart(fig)
 
 
-##########################################################   CHART 4   ##########################################################
+##########################################################   CHART 5   ##########################################################
 st.subheader('Favorite restaurants')
 df = restaurant.get_favorite_restaurant()
 fig = px.bar(df.tail(20), x="Count", y="Restaurant Name", orientation='h', color="Count", color_continuous_scale=px.colors.diverging.BrBG)
 st.plotly_chart(fig)
 
 
-##########################################################   CHART 5   ##########################################################
+##########################################################   CHART 6   ##########################################################
 st.subheader('Favorite products')
 text = order.get_favorite_products()
 wordcloud = WordCloud(mode = "RGBA", background_color=None).generate(" ".join(text))
