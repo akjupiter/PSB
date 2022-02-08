@@ -46,7 +46,7 @@ And you can get the data len, columns and dtypes:
 
 
 ### Error in Linux
-Error in Linux System if you have this error:
+If you have this error in Linux system:
 
 ```sh
 Step 1/7 : ARG PYTHON_IMAGE
