@@ -42,3 +42,26 @@ And you can get the data len, columns and dtypes:
 + docker exec -it fastapi bash -c "/code/client/app/request_fastapi.sh len"
 + docker exec -it fastapi bash -c "/code/client/app/request_fastapi.sh columns"
 + docker exec -it fastapi bash -c "/code/client/app/request_fastapi.sh dtypes"
+
+
+### Error in Linux
+Error in Linux System if you have this error:
+
+```sh
+Step 1/7 : ARG PYTHON_IMAGE
+Step 2/7 : FROM ${PYTHON_IMAGE}
+invalid reference format
+ERROR: Service 'fastapi' failed to build : Build failed
+```  
+
+Replace in Dockerfiles in streamlit and fastapi folders, the line:  
+
+```sh
+FROM ${PYTHON_IMAGE}
+```
+
+by:
+
+```sh
+FROM python:3.10
+```
