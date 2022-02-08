@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+    streamlit:
+        build:
+          context: ./sources/streamlit/
+          args:
+            PYTHON_IMAGE: ${PYTHON_IMAGE:-python:${PYTHON_VERSION}}
+        depends_on:
+           - fastapi
+        ports:
+           - 8501:8501
+        networks:
+          - streamlit_network
+        volumes:
+           - ./datas/:/datas/
+           - ./sources/streamlit/sources/:/code/sources/
+        container_name: streamlit
+
+    fastapi:
+        build:
+          context: ./sources/fastapi/server/
+          args:
+            PYTHON_IMAGE: ${PYTHON_IMAGE:-python:${PYTHON_VERSION}}
+        ports:
+           - 8000:8000
+        networks:
+           - streamlit_network
+        volumes:
+           - ./datas/:/datas/
+           - ./sources/fastapi/client/source/:/code/client/source/
+        container_name: fastapi
+
+
+networks:
+    streamlit_network:
+        driver: bridge
